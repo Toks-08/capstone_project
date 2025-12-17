@@ -16,3 +16,9 @@ class ProductSerializer(serializers.ModelSerializer):
                   'updated_at', 'category', 'category_name']
         read_only_fields = ['id', 'slug', 'is_active', 'created_at',
                   'updated_at', 'category_name']
+
+        def create(self, validated_data):
+            # Remove category from validated_data and pass it explicitly
+            category = validated_data.pop('category')
+            product = Product.objects.create(**validated_data, category=category)
+            return product
