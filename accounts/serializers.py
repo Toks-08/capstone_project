@@ -37,9 +37,10 @@ class LoginSerializer(serializers.Serializer):
         return validated_data
 
 class UserProfileSerializer(serializers.ModelSerializer):
-    model = User
-    fields = ['id', 'username', 'email', 'first_name', 'last_name']
-    read_only_fields = ['id',]
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'first_name', 'last_name']
+        read_only_fields = ['id',]
 
 class UpdateProfileSerializer(serializers.ModelSerializer):
     class Meta:
