@@ -6,7 +6,7 @@ from .models import Cart, CartItem
 from .serializers import CartSerializer, CartItemSerializer
 # Create your views here.
 
-class CartView(viewsets.ModelViewSet):
+class CartView(viewsets.ReadOnlyModelViewSet):
     serializer_class = CartSerializer
     permission_classes = [IsAuthenticated]
 

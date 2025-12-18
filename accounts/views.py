@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from rest_framework.generics import CreateAPIView, RetrieveUpdateAPIView
 from rest_framework.views import APIView
-from .serializers import UserRegistrationSerializers, LoginSerializer, UserProfileSerializer, UpdateProfileSerializer
+from .serializers import UserRegistrationSerializer, LoginSerializer, UserProfileSerializer, UpdateProfileSerializer
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework import status
@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 class UserRegistrationView(CreateAPIView):
     model = User
-    serializer_class = UserRegistrationSerializers
+    serializer_class = UserRegistrationSerializer
 
 
 class LoginView(APIView):

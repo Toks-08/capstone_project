@@ -15,7 +15,7 @@ class Product(models.Model):
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    categories = models.ForeignKey(Category, on_delete=models.PROTECT, related_name = 'products')
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name = 'products')
 
     class Meta:
         ordering = ["-created_at"]

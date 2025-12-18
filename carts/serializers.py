@@ -12,9 +12,9 @@ class CartSerializer(serializers.ModelSerializer):
     total = serializers.SerializerMethodField()
     class Meta:
         model = Cart
-        fields = ['id', 'user', 'created_at', 'updated_at', 'is_active']
+        fields = ['id', 'user', 'created_at', 'updated_at', 'is_active','items','total']
         read_only_fields = ['user', 'created_at', 'updated_at','id']
 
-        def get_total(self, obj):
-            # Sum up subtotal of all cart items
-            return sum(item.subtotal for item in obj.cart_items.all())
+    def get_total(self, obj):
+        # Sum up subtotal of all cart items
+        return sum(item.subtotal for item in obj.cart_items.all())

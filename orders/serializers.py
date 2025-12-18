@@ -12,5 +12,5 @@ class OrderSerializer(serializers.ModelSerializer):
     items = OrderItemSerializer(source='order_items', many=True, read_only=True)
     class Meta:
         model = Order
-        fields = ['id','status', 'payment_status', 'total_amount', 'created_at', 'updated_at']
+        fields = ['id','status', 'payment_status', 'total_amount', 'created_at', 'updated_at', 'items']
         read_only_fields = ['id','status', 'payment_status', 'total_amount', 'created_at', 'updated_at', 'items']
