@@ -19,7 +19,6 @@ class Product(models.Model):
 
     class Meta:
         ordering = ["-created_at"]
-        searching = ['name', 'category']
 
     def __str__(self):
         return self.name
