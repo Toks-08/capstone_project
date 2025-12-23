@@ -19,6 +19,7 @@ class Product(models.Model):
 
     class Meta:
         ordering = ["-created_at"]
+        searching = ['name', 'category']
 
     def __str__(self):
         return self.name
@@ -31,3 +32,4 @@ class Product(models.Model):
 
     def is_in_stock(self):
         return self.stock > 0
+
