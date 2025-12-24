@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "capstone-project"
+version = "0.1.0"
+description = ""
+authors = ["Tokurah"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django = "*"
+djangorestframework = "*"
+gunicorn = "*"
+whitenoise = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
