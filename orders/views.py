@@ -1,4 +1,5 @@
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 
 from .serializers import OrderSerializer, OrderItemSerializer
 from .models import Order, OrderItem
