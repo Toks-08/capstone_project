@@ -12,6 +12,7 @@ from django.db import transaction
 class OrderViewSet(viewsets.ModelViewSet):
     serializer_class = OrderSerializer
     permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
 
     # only users can see their own orders
     def get_queryset(self):

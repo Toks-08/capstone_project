@@ -9,6 +9,7 @@ from .serializers import CartSerializer, CartItemSerializer
 class CartView(viewsets.ReadOnlyModelViewSet):
     serializer_class = CartSerializer
     permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
 
     def get_queryset(self):
         # Only return carts belonging to the logged-in user
@@ -21,6 +22,7 @@ class CartView(viewsets.ReadOnlyModelViewSet):
 class CartItemView(viewsets.ModelViewSet):
     serializer_class = CartItemSerializer
     permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
 
     def get_queryset(self):
         # Only return CartItems belonging to the user's active cart
